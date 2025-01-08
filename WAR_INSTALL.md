@@ -1,6 +1,13 @@
 中文 / [English](WAR_INSTALL.en.md)
 
 # 构建教程
+## 拉取项目代码
+```
+git clone https://gitee.com/neat-logic/neatlogic-itom-all.git  --recurse-submodules
+#切换分支
+git submodule foreach 'git checkout develop3.0.0'
+```
+
 ## 构建前端vue
 ### 安装使用v18.x版本的node
 ```
@@ -62,17 +69,11 @@ cnpm list
 ### 前提条件
 先安装好jdk1.8、maven3.8+和git
 
-#### 1.拉取项目代码
-```
-git clone https://gitee.com/neat-logic/neatlogic-itom-all.git  --recurse-submodules
-#切换分支
-git submodule foreach 'git checkout develop3.0.0'
-```
-#### 2.进入 neatlogic-itom-all 文件夹
+#### 1.进入 neatlogic-itom-all 文件夹
 ```
 cd neatlogic-itom-all
 ```
-#### 3.执行install脚本
+#### 2.执行install脚本
 
 将这个[mvn_install_neatlogic_war.sh](mvn_install_neatlogic_war.sh)脚本放到neatlogic-itom-all目录下
 
