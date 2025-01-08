@@ -19,6 +19,10 @@ git submodule foreach 'git checkout develop3.0.0'
 npm install cnpm@8.2.0 -g --registry=https://registry.npmmirror.com
 ```
 > 如果启动时发现大量不明报错，可能原因是npm install阶段加载的依赖包不完整导致，可以对npm进行降级再次install，目前测试v18的npm可以正常install。或者通过cnpm install加载依赖包也可以。cnpm版本也不能太高，建议使用v8.2.0。建议使用nvm管理多版本的node，使用v18.x版本的node会比较稳定。
+进入 neatlogic-itom-all/neatlogic-web 文件夹
+```
+cd neatlogic-itom-all/neatlogic-web
+```
 ### 安装依赖
 ```
 cnpm install
