@@ -15,7 +15,17 @@
 > **如果无法重现,需自行编译打包到具体服务部署路径（查看本文“服务详细”有介绍）替换更新,目前只有<br>
 > neatlogic ： <a href="https://gitee.com/neat-logic/neatlogic-itom-all/blob/develop3.0.0/WAR_INSTALL.md">打包教程,点此查看</a> 或 <a href="https://gitee.com/neat-logic/neatlogic-itom-all/releases">使用最新封板提供的war包,点此查看</a>，停止服务，并删除/app/systems/neatlogic/apps下面的所有文件后，将新的war包copy过来，重启服务即可<br>
 > neatlogic-web ： <a href="https://gitee.com/neat-logic/neatlogic-web/blob/develop3.0.0/README.md">打包教程,点此查看</a> 或 <a href="https://gitee.com/neat-logic/neatlogic-itom-all/releases">使用最新封板提供的dist包,点此查看</a>，删除/app/systems/neatlogic-web/dist目录，将新的dist目录copy过来即可<br>
-> neatlogic-runner ：mvn install 出jar 替换重启服务即可<br>
+> neatlogic-runner ：添加neatlogic-tagent-client.jar（在项目根目录下有这个jar）到本地maven库或者私有的nexus仓库或手动导入jar到本地maven库后再install jar 替换重启服务即可，注意：<br>
+> ```
+> #如需手动导入jar到本地maven库
+> mvn install:install-file -Dfile=neatlogic-tagent-client.jar -DgroupId=com.neatlogic -DartifactId=tagent -Dversion=1.2.2.2 -Dpackaging=jar
+> #pom补充修改配置
+> <dependency>
+> 	<groupId>com.neatlogic</groupId>
+> 	<artifactId>tagent</artifactId>
+> 	<version>1.2.2.2</version>
+> </dependency>
+> ```
 > neatlogic-autoexec-backend ：纯脚本，直接替换文件即可<br>
 > 这几个服务需要更新<br>
 > **如果重现,请联系我们,提issue,谢谢!<br>
